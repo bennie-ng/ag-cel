@@ -4,12 +4,35 @@ AgCel is the **Automated Governance Layer** for your software projects. It provi
 
 ## 🚀 Quick Install
 To add AgCel standards and AI capabilities to *any* project, run:
-
 ```bash
 curl -sL https://raw.githubusercontent.com/hoangna1204/ag-cel/main/install.sh | bash
 ```
-
 This installs the `.agent/` folder, enabling your AI agent to understand your project's strict rules and workflows seamlessly.
+
+---
+
+## 🔄 The AI-Driven Lifecycle
+AgCel empowers your AI agent to participate in every stage of the SDLC using slash commands:
+
+1.  **Define (Business Analyst)**
+    - Command: `/spec_feature`
+    - Action: Turns vague ideas into strict **User Stories** and **Acceptance Criteria**.
+    - Output: `requirements.md` (INVEST compliant).
+
+2.  **Plan (QA/Tester)**
+    - Command: `/plan_qa`
+    - Action: Analyses requirements to build a **Test Plan** covering Unit, Integration, and Edge cases.
+    - Output: `test_plan.md` (Test Pyramid compliant).
+
+3.  **Build (Developer)**
+    - Command: `/implement_feature`
+    - Action: Writes code using **TDD (Red-Green-Refactor)**.
+    - Output: Production-ready code + Passing Tests.
+
+4.  **Verify (CI/CD)**
+    - Command: `/pre_commit_check`
+    - Action: Validates **API Contracts**, styles, and safety rules before merging.
+    - Output: "✅ Ready to Commit".
 
 ---
 
@@ -26,21 +49,16 @@ Automatically applied based on project detection (`pom.xml`, `package.json`, etc
 - **[Node.js](.agent/rules/nodejs.md)**: Fastify, TypeBox, BullMQ.
 - **[React/Next.js](.agent/rules/react.md)**: Server Components, Shadcn, TypeScript.
 
-### 3. AI Workflows (Slash Commands)
-Executable Standard Operating Procedures (SOPs).
-- `/init_service`: Scaffolds a new service (Java/Python/Node) complete with Docker/Tests.
-- `/implement_feature`: Enforces Red-Green-Refactor TDD cycles.
-- `/pre_commit_check`: Runs API contract tests + Code Review before you push.
-
-### 4. Role Guides
+### 3. Role Guides
 Detailed standards for human team members:
 - [Developer](docs/roles/developer.md)
 - [Product Owner](docs/roles/product-owner.md)
 - [QA / Tester](docs/roles/tester.md)
+- [Business Analyst](docs/roles/business-analyst.md)
 
 ---
 
-## 🤖 How It Works with AI
+## 🤖 How It Works
 Once installed, your AI agent (Antigravity) will:
 1.  **Auto-Detect**: Scan your repo and load the correct rules (e.g., "Ah, this is a Spring Boot app").
 2.  **Enforce**: Refuse to write code without tests (TDD mandate).
