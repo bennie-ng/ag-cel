@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "AgCel",
   description: "Automated Governance Layer for AI Agents",
+  base: '/ag-cel/',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
