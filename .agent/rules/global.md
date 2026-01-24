@@ -87,6 +87,5 @@ Write code that is production-ready, not just "working".
 3.  **Conflict Resolution**: If multiple stacks are found (e.g., a React frontend with a Python backend), apply **both** sets of standards where relevant.
 
 ### Inherit Existing Styles
-- If `REACTJS_GUIDELINES.md` exists, follow its rules for Component architecture and State management.
-- If `PYTHON_GUIDELINES.md` exists, follow its rules for formatting and structure.
+
 - **Conflict Resolution:** If a user instruction conflicts with an existing guideline, ask for clarification.
