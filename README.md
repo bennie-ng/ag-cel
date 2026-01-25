@@ -24,17 +24,22 @@ AgCel empowers your AI agent to participate in every stage of the SDLC using sla
     - Action: Turns vague ideas into strict **User Stories** and **Acceptance Criteria**.
     - Output: `requirements.md` (INVEST compliant).
 
-2.  **Plan (QA/Tester)**
+2.  **Design (Architect/Solution Designer)**
+    - Command: `/design_solution`
+    - Action: Creates **API Specs**, **Sequence Diagrams**, and **Data Models** before coding starts.
+    - Output: `api.yaml`, `schema.mmd`, `sequence.mmd`.
+
+3.  **Plan (QA/Tester)**
     - Command: `/plan_qa`
     - Action: Analyses requirements to build a **Test Plan** covering Unit, Integration, and Edge cases.
     - Output: `test_plan.md` (Test Pyramid compliant).
 
-3.  **Build (Developer)**
+4.  **Build (Developer)**
     - Command: `/implement_feature`
     - Action: Writes code using **TDD (Red-Green-Refactor)**.
     - Output: Production-ready code + Passing Tests.
 
-4.  **Verify (CI/CD)**
+5.  **Verify (CI/CD)**
     - Command: `/pre_commit_check`
     - Action: Validates **API Contracts**, styles, and safety rules before merging.
     - Output: "✅ Ready to Commit".
@@ -58,7 +63,10 @@ Automatically applied based on project detection (`pom.xml`, `package.json`, etc
 **Lifecycle Management:**
 - `/research_market` (Researcher): Finds and validates market opportunities.
 - `/spec_feature` (BA): Turns ideas into INVEST-compliant User Stories & Requirements.
+- `/design_solution` (Architect): Generates technical specs (API/DB/Sequence) from requirements.
+- `/draft_adr` (Architect): Guided workflow for creating Architecture Decision Records.
 - `/plan_qa` (QA): Generates a Test Plan based on requirements (Test Pyramid).
+- `/report_bug` (QA): Creates structured, evidence-based bug reports.
 - `/implement_feature` (Dev): Builds the feature using TDD (Red-Green-Refactor).
 - `/pre_commit_check` (CI): Validates code & contracts before merge.
 
@@ -72,6 +80,8 @@ Detailed standards for human team members:
 - [Product Owner](docs/roles/product-owner.md)
 - [QA / Tester](docs/roles/tester.md)
 - [Business Analyst](docs/roles/business-analyst.md)
+- [System Architect](docs/roles/system-architect.md)
+- [Solution Designer](docs/roles/solution-designer.md)
 
 ---
 
