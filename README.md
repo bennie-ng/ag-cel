@@ -38,11 +38,18 @@ AgCel empowers your AI agent to participate in every stage of the SDLC using sla
     - Command: `/implement_feature`
     - Action: Writes code using **TDD (Red-Green-Refactor)**.
     - Output: Production-ready code + Passing Tests.
+    - **Note**: For new projects, run `/init_service` first to set up the skeleton so the agent can detect the stack.
+
 
 5.  **Verify (CI/CD)**
     - Command: `/pre_commit_check`
     - Action: Validates **API Contracts**, styles, and safety rules before merging.
     - Output: "✅ Ready to Commit".
+
+6.  **Support & Ops**
+    - **Architect**: `/draft_adr` to document decisions, `/init_service` to scaffold new projects.
+    - **QA**: `/report_bug` to capture reproducible issues.
+
 
 ---
 

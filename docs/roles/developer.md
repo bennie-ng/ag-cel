@@ -1,7 +1,15 @@
 # Developer Standards
 
 ## Overview
-General guidelines for Developers. Specific technology standards are located in `docs/standards/`.
+General guidelines for Developers using AgCel. Specific technology standards are located in `docs/standards/`.
+
+## AgCel Workflows
+AgCel provides specific slash commands to automate your daily tasks:
+
+- **`/implement_feature`**: The primary workflow for writing code.
+  - Follows the **TDD Red-Green-Refactor** loop.
+  - **Important**: If you are starting a brand new project, you MUST run **`/init_service`** first. `/implement_feature` relies on existing configuration files to detect the tech stack.
+- **`/pre_commit_check`**: Run this before merging to validate API contracts, linting, and tests.
 
 ## Key Responsibilities
 - Writing clean, maintainable code.

@@ -3,6 +3,13 @@
 ## Overview
 Guidelines for the System Architect role, focusing on high-level system structure, technology selection, and non-functional requirements.
 
+## AgCel Workflows
+Tools to help you structure and document the system:
+
+- **`/design_solution`**: Generates API specs, sequence diagrams, and data models from requirements.
+- **`/draft_adr`**: Guided workflow for creating Architecture Decision Records. Use this instead of unformatted comments.
+- **`/init_service`**: Scaffolds a new microservice (Java/Python/Node) complete with Docker, CI, and AgCel standards.
+
 ## Key Responsibilities
 - Defining the overall architecture and design patterns (e.g., Microservices, Event-Driven).
 - Making high-level technology choices and standardizing tools.

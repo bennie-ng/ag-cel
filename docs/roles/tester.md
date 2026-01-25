@@ -3,6 +3,12 @@
 ## Overview
 Standards for QA and Testing roles.
 
+## AgCel Workflows
+Automate your test planning and reporting:
+
+- **`/plan_qa`**: Generates a comprehensive Test Plan based on requirements, ensuring the Test Pyramid is respected.
+- **`/report_bug`**: Creates a structured bug report with steps to reproduce, ensuring developers have what they need to fix it.
+
 ## Key Responsibilities
 - Test planning and execution.
 - Defect tracking and reporting.
