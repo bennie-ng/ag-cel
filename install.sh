@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # AgCel Installer Script
-# Usage: curl -sL https://raw.githubusercontent.com/hoangna1204/ag-cel/main/install.sh | bash
+# Usage: curl -sL https://raw.githubusercontent.com/bennie-ng/ag-cel/main/install.sh | bash
 
-REPO_URL="https://github.com/hoangna1204/ag-cel.git"
+REPO_URL="https://github.com/bennie-ng/ag-cel.git"
 TARGET_DIR=".agent"
 TEMP_DIR=$(mktemp -d)
 
@@ -39,7 +39,7 @@ fi
 # Check if AgCel is already mentioned
 if ! grep -q "AgCel" "$README"; then
     echo "📝 Adding AgCel reference to README.md..."
-    echo -e "\n$HEADER\nThis project uses [AgCel](https://github.com/hoangna1204/ag-cel) standards.\nSee [.agent/rules/global.md](.agent/rules/global.md) for guidelines." >> "$README"
+    echo -e "\n$HEADER\nThis project uses [AgCel](https://github.com/bennie-ng/ag-cel) standards.\nSee [.agent/rules/global.md](.agent/rules/global.md) for guidelines." >> "$README"
 fi
 
 # 4. Clean up

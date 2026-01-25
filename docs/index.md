@@ -11,7 +11,7 @@ hero:
       link: "/rules/global"
     - theme: alt
       text: "View on GitHub"
-      link: "https://github.com/hoangna1204/ag-cel"
+      link: "https://github.com/bennie-ng/ag-cel"
 
 features:
   - title: AI-First Governance

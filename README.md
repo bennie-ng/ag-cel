@@ -5,7 +5,7 @@ AgCel is the **Automated Governance Layer** for your software projects. It provi
 ## 🚀 Quick Install
 To add AgCel standards and AI capabilities to *any* project, run:
 ```bash
-curl -sL https://raw.githubusercontent.com/hoangna1204/ag-cel/main/install.sh | bash
+curl -sL https://raw.githubusercontent.com/bennie-ng/ag-cel/main/install.sh | bash
 ```
 This installs the `.agent/` folder, enabling your AI agent to understand your project's strict rules and workflows seamlessly.
 
