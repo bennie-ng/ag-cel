@@ -1,4 +1,4 @@
-# AgCel (Antigravity Cell)
+# AgCel (Antigravity Context Engineering Library)
 
 AgCel is the **Automated Governance Layer** for your software projects. It provides a unified source of truth for standards, rules, and AI-driven workflows, ensuring consistent quality across diverse tech stacks.
 
