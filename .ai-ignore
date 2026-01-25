@@ -1,0 +1,23 @@
+# AI Ignore File
+# Limits context for AI tools to relevant source code
+
+# Checkpoints and Heavy Dirs
+node_modules/
+dist/
+build/
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# System Files
+.DS_Store
+
+# Large Data/Assets (if any)
+*.zip
+*.tar.gz
+*.mp4
+*.mov
+
+# Lock files (often too verbose for context)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
