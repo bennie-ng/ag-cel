@@ -35,6 +35,8 @@ export default defineConfig({
             { text: 'Tester / QA', link: '/roles/tester' },
             { text: 'Business Analyst', link: '/roles/business-analyst' },
             { text: 'Market Researcher', link: '/roles/market-researcher' },
+            { text: 'System Architect', link: '/roles/system-architect' },
+            { text: 'Solution Designer', link: '/roles/solution-designer' },
           ]
         }
       ]
