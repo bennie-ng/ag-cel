@@ -69,3 +69,15 @@ This document defines the mandatory development patterns for our Java/Kotlin eco
   |Primary Choice|TSID|Long (64-bit) via @TsId|Optimal balance of size (8 bytes), sorting, and batching performance. **Implementation**: 1. Add `io.hypersistence:hypersistence-utils-hibernate-xx` dependency. 2. Annotate the primary key with `@Id` and `@TsId`. 3. Configure `TSID_NODE` as an environment variable in Kubernetes to ensure node uniqueness.|
   |Secondary Choice|UUID v7|UUID (128-bit) via @GeneratedValue|Use when 128-bit global uniqueness is required or native UUID types are preferred.|
   |Prohibited|IDENTITY|GenerationType.IDENTITY|Leaks data (guessable), prevents JDBC batching, and requires DB round-trips.|
+
+## 4. Observability & Logging Rules
+**Goal**: Enable Ops team to detect bugs and errors effectively while protecting user data.
+- **Rule 1: Full Traceability (Micrometer)**
+  - Ensure `TraceId` and `SpanId` are present in MDC (Mapped Diagnostic Context) for all logs.
+  - Automatically injected via Spring Boot Actuator + Micrometer Tracing.
+- **Rule 2: Strategic Logging (SLF4J)**
+  - Use `log.info()` for business milestones and `log.error()` for exceptions.
+  - Exception logs MUST include the stack trace: `log.error("Msg", ex)`.
+- **Rule 3: Security & Privacy**
+  - **Strictly Prohibited**: Logging passwords, secrets, or sensitive PII.
+  - Use `@ToString.Exclude` on sensitive fields in DTOs/Entities to prevent accidental logging via `toString()`.

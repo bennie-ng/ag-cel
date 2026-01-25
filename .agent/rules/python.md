@@ -73,3 +73,15 @@ This document outlines the mandatory patterns for API design, Event-Driven commu
   - **Primary Choice**: Use `uuid.uuid7()` for all new models.
   - **Secondary Choice (Storage Optimized)**: Use `tsidpy` if the table is expected to exceed 100M+ rows to save on index storage.
   - **Prohibited**: Do not use standard `uuid4()` for primary keys as it causes massive database index fragmentation (random inserts).
+
+## 4. Observability & Logging Rules
+**Goal**: Enable Ops team to detect bugs and errors effectively while protecting user data.
+- **Rule 1: Full Traceability**
+  - Ensure every request (HTTP or Consumer) carries a `trace_id` (OpenTelemetry compatible).
+  - Propagate this ID to all downstream services and logs.
+- **Rule 2: Strategic Logging**
+  - Use the standard `logging` library (or `structlog`).
+  - Log at appropriate levels: `ERROR` for exceptions, `INFO` for lifecycle events, `DEBUG` for dev troubleshooting.
+- **Rule 3: Security & Privacy**
+  - **Strictly Prohibited**: Logging passwords, secrets, or sensitive PII.
+  - Implement Pydantic validators or custom filters to mask sensitive fields before logging models.

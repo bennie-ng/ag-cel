@@ -57,3 +57,14 @@
   - **Primary Choice: TSID (64-bit Long)** — Use `tsidpy` or similar for sequential, distributed-safe IDs that save space.
   - **Secondary Choice: UUID v7 (128-bit)** — Use `uuid.uuid7()` (native in modern Node/TS) for standard UUID compatibility with time-sorting.
   - **Prohibited**: Serial/Auto-increment integers for public-facing resources (prevents ID scraping and scaling issues).
+
+## 4. Observability & Logging Rules
+**Goal**: Enable Ops team to detect bugs and errors effectively while protecting user data.
+- **Rule 1: Full Traceability**
+  - Ensure every request has a unique `request_id` or `trace_id`. Propagate this ID through all internal service calls and logs.
+- **Rule 2: Strategic Logging**
+  - Log significant events (errors, boundary crossings, state changes). Do not log noise.
+  - *Context*: Logs must contain context (user ID, request ID), not just "Error occurred".
+- **Rule 3: Security & Privacy**
+  - **Strictly Prohibited**: Logging passwords, API keys, tokens, or sensitive PII (Personally Identifiable Information).
+  - Use redaction/masking utilties if logging raw request bodies.
