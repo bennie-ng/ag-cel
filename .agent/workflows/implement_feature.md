@@ -31,3 +31,10 @@ description: Implement a new feature using TDD and Artifact-Driven Development.
   1. Run the `code_review_assistant` skill on the modified files.
   2. Fix any warnings or violations raised by the assistant.
   3. Update `task.md` to mark the item as complete.
+
+## 5. Verification Phase (Gap Analysis)
+- **Goal**: Ensure the implemented solution fully matches the original requirements and no details were missed.
+- **Actions**:
+  1. Review the initial requirements (from user request or `task.md`) against the current project state.
+  2. Explicitly check for any missing edge cases, unimplemented features, or deviations from the plan.
+  3. If gaps are found, add them to `task.md` and repeat the cycle; otherwise, mark the feature clearly as 'Done'.
