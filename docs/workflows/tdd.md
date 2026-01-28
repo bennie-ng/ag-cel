@@ -1,5 +1,5 @@
 ---
-description: Start a TDD workflow: write failing tests first, then implement to make them pass.
+description: "Start a TDD workflow: write failing tests first, then implement to make them pass."
 ---
 
 # /tdd - Test-Driven Development Workflow
