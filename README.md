@@ -15,40 +15,41 @@ This installs the `.agent/` folder, enabling your AI agent to understand your pr
 AgCel empowers your AI agent to participate in every stage of the SDLC using slash commands:
 
 0.  **Discover (Market Researcher)**
-    - Command: `/research_market`
+    - Command: `/research`
     - Action: Identifies viable **Market Gaps** and validates problems.
     - Output: `market_opportunity.md`.
 
 1.  **Define (Business Analyst)**
-    - Command: `/spec_feature`
+    - Command: `/spec`
     - Action: Turns vague ideas into strict **User Stories** and **Acceptance Criteria**.
     - Output: `requirements.md` (INVEST compliant).
 
 2.  **Design (Architect/Solution Designer)**
-    - Command: `/design_solution`
+    - Command: `/design`
     - Action: Creates **API Specs**, **Sequence Diagrams**, and **Data Models** before coding starts.
     - Output: `api.yaml`, `schema.mmd`, `sequence.mmd`.
 
 3.  **Plan (QA/Tester)**
-    - Command: `/plan_qa`
+    - Command: `/qa`
     - Action: Analyses requirements to build a **Test Plan** covering Unit, Integration, and Edge cases.
     - Output: `test_plan.md` (Test Pyramid compliant).
 
 4.  **Build (Developer)**
-    - Command: `/implement_feature`
+    - Command: `/feature`
     - Action: Writes code using **TDD (Red-Green-Refactor)**.
     - Output: Production-ready code + Passing Tests.
-    - **Note**: For new projects, run `/init_service` first to set up the skeleton so the agent can detect the stack.
+    - **Note**: For new projects, run `/init` first to set up the skeleton so the agent can detect the stack.
 
 
 5.  **Verify (CI/CD)**
-    - Command: `/pre_commit_check`
+    - Command: `/check`
     - Action: Validates **API Contracts**, styles, and safety rules before merging.
     - Output: "✅ Ready to Commit".
 
 6.  **Support & Ops**
-    - **Architect**: `/draft_adr` to document decisions, `/init_service` to scaffold new projects.
-    - **QA**: `/report_bug` to capture reproducible issues.
+    - **Architect**: `/adr` to document decisions, `/init` to scaffold new projects.
+    - **QA**: `/bug` to capture reproducible issues.
+    - **Reviewer**: `/review` to review code or content with specific personas.
 
 
 ---
@@ -68,17 +69,18 @@ Automatically applied based on project detection (`pom.xml`, `package.json`, etc
 
 ### 3. AI Workflows (Slash Commands)
 **Lifecycle Management:**
-- `/research_market` (Researcher): Finds and validates market opportunities.
-- `/spec_feature` (BA): Turns ideas into INVEST-compliant User Stories & Requirements.
-- `/design_solution` (Architect): Generates technical specs (API/DB/Sequence) from requirements.
-- `/draft_adr` (Architect): Guided workflow for creating Architecture Decision Records.
-- `/plan_qa` (QA): Generates a Test Plan based on requirements (Test Pyramid).
-- `/report_bug` (QA): Creates structured, evidence-based bug reports.
-- `/implement_feature` (Dev): Builds the feature using TDD (Red-Green-Refactor).
-- `/pre_commit_check` (CI): Validates code & contracts before merge.
+- `/research` (Researcher): Finds and validates market opportunities.
+- `/spec` (BA): Turns ideas into INVEST-compliant User Stories & Requirements.
+- `/design` (Architect): Generates technical specs (API/DB/Sequence) from requirements.
+- `/adr` (Architect): Guided workflow for creating Architecture Decision Records.
+- `/qa` (QA): Generates a Test Plan based on requirements (Test Pyramid).
+- `/bug` (QA): Creates structured, evidence-based bug reports.
+- `/feature` (Dev): Builds the feature using TDD (Red-Green-Refactor).
+- `/check` (CI): Validates code & contracts before merge.
 
 **Ops:**
-- `/init_service`: Scaffolds a new service (Java/Python/Node) complete with Docker/Tests.
+- `/init`: Scaffolds a new service (Java/Python/Node) complete with Docker/Tests.
+- `/review`: Reviews code/content (`--persona=security|content|QA`).
 
 ### 4. Role Guides
 Detailed standards for human team members:
