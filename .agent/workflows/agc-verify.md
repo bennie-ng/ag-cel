@@ -26,3 +26,6 @@ This workflow audits the codebase for bugs, quality issues, and security vulnera
     - Use key: `qa-engineer` / `test-fixing`
     - Goal: Run all tests and attempt to fix any failures.
     - Instruction: Ensure all tests pass before completing the workflow.
+
+## Iron Rules
+1. If there is anything unclear, ask the user instead of inventing new stuff. Unless the user explicitly tells the AI to invent or suggest ideas.

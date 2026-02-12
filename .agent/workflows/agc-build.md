@@ -29,3 +29,6 @@ This workflow guides the implementation of features using best practices.
 4.  **Refactoring**
     - Use key: `secure-refactoring`
     - Goal: Refactor the code for better readability and security after getting tests to pass (Green phase).
+
+## Iron Rules
+1. If there is anything unclear, ask the user instead of inventing new stuff. Unless the user explicitly tells the AI to invent or suggest ideas.

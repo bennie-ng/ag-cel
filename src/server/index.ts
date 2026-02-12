@@ -78,11 +78,15 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
         if (fs.existsSync(skillPath)) {
             const content = fs.readFileSync(skillPath, 'utf-8');
+            const ironRule = `
+## Iron Rules
+1. If there is anything unclear, ask the user instead of inventing new stuff. Unless the user explicitly tells the AI to invent or suggest ideas.
+`;
             return {
                 content: [
                     {
                         type: "text",
-                        text: content
+                        text: content + ironRule
                     }
                 ]
             };

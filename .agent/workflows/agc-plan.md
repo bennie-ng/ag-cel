@@ -27,3 +27,6 @@ This workflow transforms a rough idea into a concrete product plan and requireme
     - Use key: `writing-plans`
     - Goal: Synthesize all inputs into a final `PRD.md` artifact.
     - Instruction: Create a file named `PRD.md` in the current directory with the full plan.
+
+## Iron Rules
+1. If there is anything unclear, ask the user instead of inventing new stuff. Unless the user explicitly tells the AI to invent or suggest ideas.

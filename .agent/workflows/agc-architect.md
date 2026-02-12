@@ -35,3 +35,6 @@ This workflow defines the technical architecture based on the PRD.
     - Use key: `architecture`
     - Goal: Document the Architecture Decision Records (ADRs) and final design.
     - Instruction: Create `ARCHITECTURE.md` with the full design.
+
+## Iron Rules
+1. If there is anything unclear, ask the user instead of inventing new stuff. Unless the user explicitly tells the AI to invent or suggest ideas.

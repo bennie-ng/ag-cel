@@ -30,3 +30,6 @@ This workflow prepares the application for production deployment.
 5.  **Documentation**
     - Use key: `security-documentation`
     - Goal: Update `README.md` and security docs with deployment instructions.
+
+## Iron Rules
+1. If there is anything unclear, ask the user instead of inventing new stuff. Unless the user explicitly tells the AI to invent or suggest ideas.
