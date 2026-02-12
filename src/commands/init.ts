@@ -29,30 +29,65 @@ export function initCommand() {
             console.log(chalk.yellow('Ag-Cel directory already exists. Updating resources...'));
         }
 
-        // Copy skills from package to local .ag-cel/skills
+        // Symlink skills from package to local .ag-cel/skills
         const sourceSkillsDir = path.join(packageRoot, 'skills');
         if (fs.existsSync(sourceSkillsDir)) {
-            console.log(chalk.blue('Copying skills...'));
+            console.log(chalk.blue('Symlinking skills...'));
             const targetSkillsDir = path.join(agCelDir, 'skills');
-            // Ensure target exists
-            if (!fs.existsSync(targetSkillsDir)) fs.mkdirSync(targetSkillsDir, { recursive: true });
 
-            fs.cpSync(sourceSkillsDir, targetSkillsDir, { recursive: true });
-            console.log(chalk.green('Copied skills to .ag-cel/skills.'));
+            // Check if target exists and is a symlink
+            if (fs.existsSync(targetSkillsDir)) {
+                const stats = fs.lstatSync(targetSkillsDir);
+                if (stats.isSymbolicLink()) {
+                    console.log(chalk.yellow('Skills directory is already symlinked.'));
+                } else {
+                    console.warn(chalk.yellow(`Warning: Skills directory already exists at ${targetSkillsDir}. Skipping symlink.`));
+                }
+            } else {
+                try {
+                    // Start fresh
+                    fs.symlinkSync(sourceSkillsDir, targetSkillsDir, 'dir');
+                    console.log(chalk.green('Symlinked skills to .ag-cel/skills.'));
+                } catch (e) {
+                    console.error(chalk.red(`Failed to symlink skills: ${e}`));
+                }
+            }
         } else {
             console.warn(chalk.yellow(`Warning: Skills directory not found in package at ${sourceSkillsDir}`));
         }
 
-        // Copy workflows to .agent/workflows (Antigravity standard)
+        // Symlink workflows to .agent/workflows (Antigravity standard)
         const sourceAgentDir = path.join(packageRoot, '.agent');
         if (fs.existsSync(sourceAgentDir)) {
-            console.log(chalk.blue('Copying IDE workflows...'));
-            const targetAgentDir = path.join(process.cwd(), '.agent');
-            // Ensure target exists
-            if (!fs.existsSync(targetAgentDir)) fs.mkdirSync(targetAgentDir, { recursive: true });
+            console.log(chalk.blue('Symlinking IDE workflows...'));
+            const sourceWorkflowsDir = path.join(sourceAgentDir, 'workflows');
+            const targetParentDir = path.join(process.cwd(), '.agent');
 
-            fs.cpSync(sourceAgentDir, targetAgentDir, { recursive: true });
-            console.log(chalk.green('Copied workflows to .agent directory.'));
+            if (!fs.existsSync(targetParentDir)) {
+                fs.mkdirSync(targetParentDir);
+            }
+
+            const targetWorkflowsDir = path.join(targetParentDir, 'workflows');
+
+            if (fs.existsSync(targetWorkflowsDir)) {
+                const stats = fs.lstatSync(targetWorkflowsDir);
+                if (stats.isSymbolicLink()) {
+                    console.log(chalk.yellow('Workflows directory is already symlinked.'));
+                } else {
+                    console.warn(chalk.yellow(`Warning: Workflows directory already exists at ${targetWorkflowsDir}. Skipping symlink.`));
+                }
+            } else {
+                if (fs.existsSync(sourceWorkflowsDir)) {
+                    try {
+                        fs.symlinkSync(sourceWorkflowsDir, targetWorkflowsDir, 'dir');
+                        console.log(chalk.green('Symlinked workflows to .agent/workflows.'));
+                    } catch (e) {
+                        console.error(chalk.red(`Failed to symlink workflows: ${e}`));
+                    }
+                } else {
+                    console.warn(chalk.yellow(`Warning: Workflows directory not found in package at ${sourceWorkflowsDir}`));
+                }
+            }
         } else {
             console.warn(chalk.yellow(`Warning: .agent directory not found in package at ${sourceAgentDir}`));
         }
