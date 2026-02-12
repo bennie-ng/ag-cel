@@ -1,9 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import chalk from 'chalk';
+import inquirer from 'inquirer';
 import { getAgCelDir, AG_CEL_DIR, getPackageRoot } from '../utils/index.js';
 
-export function initCommand() {
+export async function initCommand() {
     const agCelDir = getAgCelDir();
     const packageRoot = getPackageRoot();
 
@@ -32,20 +33,36 @@ export function initCommand() {
         // Symlink skills from package to local .ag-cel/skills
         const sourceSkillsDir = path.join(packageRoot, 'skills');
         if (fs.existsSync(sourceSkillsDir)) {
-            console.log(chalk.blue('Symlinking skills...'));
             const targetSkillsDir = path.join(agCelDir, 'skills');
+            let shouldSymlink = true;
 
-            // Check if target exists and is a symlink
+            // Check if target exists
             if (fs.existsSync(targetSkillsDir)) {
                 const stats = fs.lstatSync(targetSkillsDir);
                 if (stats.isSymbolicLink()) {
-                    console.log(chalk.yellow('Skills directory is already symlinked.'));
+                    console.log(chalk.green('Skills directory is already symlinked.'));
+                    shouldSymlink = false;
                 } else {
-                    console.warn(chalk.yellow(`Warning: Skills directory already exists at ${targetSkillsDir}. Skipping symlink.`));
+                    const answer = await inquirer.prompt([{
+                        type: 'confirm',
+                        name: 'overwrite',
+                        message: `Skills directory already exists at ${targetSkillsDir}. Overwrite with symlink?`,
+                        default: false
+                    }]);
+
+                    if (answer.overwrite) {
+                        console.log(chalk.blue('Removing existing skills directory...'));
+                        fs.rmSync(targetSkillsDir, { recursive: true, force: true });
+                    } else {
+                        console.log(chalk.yellow('Skipping skills symlink.'));
+                        shouldSymlink = false;
+                    }
                 }
-            } else {
+            }
+
+            if (shouldSymlink) {
                 try {
-                    // Start fresh
+                    console.log(chalk.blue('Symlinking skills...'));
                     fs.symlinkSync(sourceSkillsDir, targetSkillsDir, 'dir');
                     console.log(chalk.green('Symlinked skills to .ag-cel/skills.'));
                 } catch (e) {
@@ -59,7 +76,6 @@ export function initCommand() {
         // Symlink workflows to .agent/workflows (Antigravity standard)
         const sourceAgentDir = path.join(packageRoot, '.agent');
         if (fs.existsSync(sourceAgentDir)) {
-            console.log(chalk.blue('Symlinking IDE workflows...'));
             const sourceWorkflowsDir = path.join(sourceAgentDir, 'workflows');
             const targetParentDir = path.join(process.cwd(), '.agent');
 
@@ -68,17 +84,35 @@ export function initCommand() {
             }
 
             const targetWorkflowsDir = path.join(targetParentDir, 'workflows');
+            let shouldSymlink = true;
 
             if (fs.existsSync(targetWorkflowsDir)) {
                 const stats = fs.lstatSync(targetWorkflowsDir);
                 if (stats.isSymbolicLink()) {
-                    console.log(chalk.yellow('Workflows directory is already symlinked.'));
+                    console.log(chalk.green('Workflows directory is already symlinked.'));
+                    shouldSymlink = false;
                 } else {
-                    console.warn(chalk.yellow(`Warning: Workflows directory already exists at ${targetWorkflowsDir}. Skipping symlink.`));
+                    const answer = await inquirer.prompt([{
+                        type: 'confirm',
+                        name: 'overwrite',
+                        message: `Workflows directory already exists at ${targetWorkflowsDir}. Overwrite with symlink?`,
+                        default: false
+                    }]);
+
+                    if (answer.overwrite) {
+                        console.log(chalk.blue('Removing existing workflows directory...'));
+                        fs.rmSync(targetWorkflowsDir, { recursive: true, force: true });
+                    } else {
+                        console.log(chalk.yellow('Skipping workflows symlink.'));
+                        shouldSymlink = false;
+                    }
                 }
-            } else {
+            }
+
+            if (shouldSymlink) {
                 if (fs.existsSync(sourceWorkflowsDir)) {
                     try {
+                        console.log(chalk.blue('Symlinking IDE workflows...'));
                         fs.symlinkSync(sourceWorkflowsDir, targetWorkflowsDir, 'dir');
                         console.log(chalk.green('Symlinked workflows to .agent/workflows.'));
                     } catch (e) {
