@@ -84,7 +84,38 @@ export async function initCommand() {
         console.log(chalk.green('AgCel project initialization complete!'));
         console.log(chalk.cyan('Workflows have been installed to .agent/workflows.'));
 
+        // 4. Update .gitignore
+        updateGitIgnore(process.cwd());
+
     } catch (error) {
         console.error(chalk.red('Failed to initialize project:'), error);
+    }
+}
+
+function updateGitIgnore(cwd: string) {
+    const gitIgnorePath = path.join(cwd, '.gitignore');
+    const entriesToAdd = ['.agc', '.agents', '.agent'];
+
+    let content = '';
+
+    if (fs.existsSync(gitIgnorePath)) {
+        content = fs.readFileSync(gitIgnorePath, 'utf-8');
+    } else {
+        console.log(chalk.blue('Creating .gitignore...'));
+    }
+
+    const lines = content.split('\n').map(line => line.trim());
+    const newEntries: string[] = [];
+
+    for (const entry of entriesToAdd) {
+        if (!lines.includes(entry)) {
+            newEntries.push(entry);
+        }
+    }
+
+    if (newEntries.length > 0) {
+        const appendContent = (content && !content.endsWith('\n') ? '\n' : '') + newEntries.join('\n') + '\n';
+        fs.appendFileSync(gitIgnorePath, appendContent);
+        console.log(chalk.green(`Added ${newEntries.join(', ')} to .gitignore`));
     }
 }
