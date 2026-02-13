@@ -5,7 +5,7 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://bennie-ng.github.io',
-	base: '/agcel',
+	base: '/AgCel',
 	integrations: [
 		starlight({
 			title: 'AgCel',
