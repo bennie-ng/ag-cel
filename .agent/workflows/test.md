@@ -292,10 +292,10 @@ pytest tests/services/auth.test.ts -v
 
 This command leverages MCP servers for enhanced testing:
 
-### Playwright - E2E Testing (Primary for UI)
+### Browser tools - E2E Testing (Primary for UI)
 ```
 For E2E and browser tests:
-- Use Playwright for cross-browser testing
+- Use Browser tools for cross-browser testing
 - Automate user flow verification
 - Capture screenshots for visual testing
 - Test on different device emulations
@@ -304,13 +304,13 @@ For E2E and browser tests:
 ### Filesystem - Test File Management
 ```
 For test file operations:
-- Use directory_tree to find test directories
-- Use search_files to find existing tests
-- Use read_file to check test patterns
-- Use write_file to create new test files
+- Use list_dir to find test directories
+- Use grep_search to find existing tests
+- Use view_file to check test patterns
+- Use write_to_file to create new test files
 ```
 
-### Context7 - Testing Best Practices
+### Web Search - Testing Best Practices
 ```
 For framework-specific testing:
 - Fetch current testing library docs

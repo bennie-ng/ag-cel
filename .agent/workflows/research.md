@@ -65,15 +65,15 @@ Research: **$ARGUMENTS**
 
 This command leverages MCP servers for enhanced research:
 
-### Context7 - Library Documentation (Primary)
+### Web Search - Library Documentation (Primary)
 ```
-ALWAYS use Context7 for library/framework research:
+ALWAYS use Web Search for library/framework research:
 1. Use resolve-library-id to find the library ID
 2. Use get-library-docs with topic parameter for focused docs
 3. Use mode='code' for API references, mode='info' for concepts
 ```
 
-### Sequential Thinking - Structured Analysis
+### Reasoning - Structured Analysis
 ```
 For complex research requiring step-by-step reasoning:
 - Use sequentialthinking tool to break down analysis

@@ -204,17 +204,17 @@ git diff --staged
 
 This command leverages MCP servers for enhanced capabilities:
 
-### Context7 - Library Documentation
+### Web Search - Library Documentation
 When researching unfamiliar libraries or frameworks:
 ```
-Use Context7's resolve-library-id and get-library-docs tools to fetch
+Use web search and get-library-docs tools to fetch
 current documentation for any libraries involved in the feature.
 ```
 
-### Sequential Thinking - Structured Planning
+### Reasoning - Structured Planning
 For complex feature breakdowns:
 ```
-Use Sequential Thinking's sequentialthinking tool for step-by-step
+Use reasoning for step-by-step
 analysis when decomposing requirements or designing architecture.
 ```
 
@@ -229,15 +229,15 @@ Store and recall project context:
 ### Filesystem - File Operations
 For creating and modifying files:
 ```
-- Use directory_tree to understand project structure
-- Use search_files to find related implementations
-- Use read_file and write_file for file operations
+- Use list_dir to understand project structure
+- Use grep_search to find related implementations
+- Use view_file and write_to_file for file operations
 ```
 
-### Playwright - E2E Testing
+### Browser tools - E2E Testing
 For features with UI components:
 ```
-Use Playwright for browser-based E2E testing of the implemented feature.
+Use Browser tools for browser testing of the implemented feature.
 Validate user flows and interactions in real browser environment.
 ```
 

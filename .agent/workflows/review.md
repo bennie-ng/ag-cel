@@ -295,7 +295,7 @@ Found **1 critical issue** (security), **2 recommendations**, and **2 suggestion
 
 This command leverages MCP servers for enhanced code review:
 
-### Playwright - Visual/UI Review
+### Browser tools - Visual/UI Review
 ```
 For reviewing UI changes:
 - Render and screenshot components
@@ -313,7 +313,7 @@ Store and recall review context:
 - Track recurring issues across reviews
 ```
 
-### Sequential Thinking - Systematic Analysis
+### Reasoning - Systematic Analysis
 ```
 For thorough code analysis:
 - Step through complex logic systematically
@@ -325,8 +325,8 @@ For thorough code analysis:
 ### Filesystem - Code Access
 ```
 For reviewing file changes:
-- Use read_file to examine code
-- Use search_files to find related patterns
+- Use view_file to examine code
+- Use grep_search to find related patterns
 - Check for similar issues across codebase
 ```
 

@@ -128,9 +128,9 @@ This command leverages MCP servers for enhanced indexing:
 ### Filesystem - Project Scanning (Primary)
 ```
 ALWAYS use Filesystem for project scanning:
-- Use directory_tree for full structure view
+- Use list_dir for full structure view
 - Use list_directory for targeted exploration
-- Use search_files to find specific patterns
+- Use grep_search to find specific patterns
 - Use get_file_info for file metadata
 ```
 

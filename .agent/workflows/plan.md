@@ -289,9 +289,9 @@ Use `/execute-plan [plan-file]` for subagent-driven execution with code review g
 
 This command leverages MCP servers for enhanced planning:
 
-### Sequential Thinking - Structured Planning (Primary)
+### Reasoning - Structured Planning (Primary)
 ```
-ALWAYS use Sequential Thinking for task decomposition:
+ALWAYS use Reasoning for task decomposition:
 - Break complex tasks into logical thought sequences
 - Track dependencies between steps
 - Revise plan as understanding deepens
@@ -307,7 +307,7 @@ Store and recall planning context:
 - Create entities for major features/components
 ```
 
-### Context7 - Technology Research
+### Web Search - Technology Research
 ```
 When planning involves unfamiliar technologies:
 - Fetch current documentation for accurate estimates
@@ -318,8 +318,8 @@ When planning involves unfamiliar technologies:
 ### Filesystem - Codebase Analysis
 ```
 For accurate file identification:
-- Use directory_tree to understand project structure
-- Use search_files to find existing patterns
+- Use list_dir to understand project structure
+- Use grep_search to find existing patterns
 - Identify files to create vs modify
 ```
 

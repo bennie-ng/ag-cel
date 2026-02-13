@@ -134,12 +134,12 @@ Analyze and fix the following issue: **$ARGUMENTS**
 ### Fix Applied
 
 **Before:**
-```[language]
+```typescript
 // Problematic code
 ```
 
 **After:**
-```[language]
+```typescript
 // Fixed code
 ```
 
@@ -266,9 +266,9 @@ for item in items:
 
 This command leverages MCP servers for enhanced debugging:
 
-### Sequential Thinking - Root Cause Analysis (Primary)
+### Reasoning - Root Cause Analysis (Primary)
 ```
-ALWAYS use Sequential Thinking for debugging:
+ALWAYS use Reasoning for debugging:
 - Trace execution path step-by-step
 - Form and test hypotheses systematically
 - Track confidence in each potential cause
@@ -284,7 +284,7 @@ Store and recall debugging context:
 - Create relations between bugs and affected components
 ```
 
-### Playwright - Browser Testing
+### Browser tools - Browser Testing
 ```
 For UI/frontend bugs:
 - Reproduce the bug in browser environment
@@ -293,7 +293,7 @@ For UI/frontend bugs:
 - Automate regression test for the fix
 ```
 
-### Context7 - Library Issues
+### Web Search - Library Issues
 ```
 When debugging library-related issues:
 - Fetch current documentation for correct usage
@@ -304,8 +304,8 @@ When debugging library-related issues:
 ### Filesystem - Code Search
 ```
 For tracing bug across codebase:
-- Use search_files to find related code
-- Use read_file to examine suspicious areas
+- Use grep_search to find related code
+- Use view_file to examine suspicious areas
 - Track changes with file history
 ```
 

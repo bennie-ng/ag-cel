@@ -184,9 +184,9 @@ After design is complete:
 
 This command leverages MCP servers for enhanced brainstorming:
 
-### Sequential Thinking - Structured Exploration (Primary)
+### Reasoning - Structured Exploration (Primary)
 ```
-ALWAYS use Sequential Thinking for brainstorming:
+ALWAYS use Reasoning for brainstorming:
 - Explore design options systematically
 - Track pros/cons for each approach
 - Revise conclusions based on user feedback
@@ -202,7 +202,7 @@ Store design decisions for continuity:
 - Build knowledge graph of architecture decisions
 ```
 
-### Context7 - Technology Options
+### Web Search - Technology Options
 ```
 When exploring technology choices:
 - Fetch current documentation for options

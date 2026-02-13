@@ -29,14 +29,40 @@ function copySkills(source, dest) {
         } else if (item.name === 'SKILL.md') {
             const destPath = path.join(dest, 'index.md');
             let content = fs.readFileSync(srcPath, 'utf8');
-            if (!content.includes('title:')) {
+            if (content.startsWith('---')) {
+                const frontMatterEnd = content.indexOf('---', 3);
+                if (frontMatterEnd !== -1) {
+                    const frontMatter = content.slice(3, frontMatterEnd);
+                    if (!frontMatter.includes('title:')) {
+                        const title = path.basename(source);
+                        const newFrontMatter = `title: ${title}\n` + frontMatter;
+                        content = `---${newFrontMatter}---` + content.slice(frontMatterEnd + 3);
+                    }
+                }
+            } else {
                 const title = path.basename(source);
                 content = `---\ntitle: ${title}\n---\n\n` + content;
             }
             fs.writeFileSync(destPath, content);
         } else if (item.name.endsWith('.md')) {
             const destPath = path.join(dest, item.name);
-            fs.copyFileSync(srcPath, destPath);
+            let content = fs.readFileSync(srcPath, 'utf8');
+
+            if (content.startsWith('---')) {
+                const frontMatterEnd = content.indexOf('---', 3);
+                if (frontMatterEnd !== -1) {
+                    const frontMatter = content.slice(3, frontMatterEnd);
+                    if (!frontMatter.includes('title:')) {
+                        const title = item.name.replace('.md', '');
+                        const newFrontMatter = `title: ${title}\n` + frontMatter;
+                        content = `---${newFrontMatter}---` + content.slice(frontMatterEnd + 3);
+                    }
+                }
+            } else {
+                const title = item.name.replace('.md', '');
+                content = `---\ntitle: ${title}\n---\n\n` + content;
+            }
+            fs.writeFileSync(destPath, content);
         }
     });
 }
@@ -59,13 +85,19 @@ workflows.forEach(file => {
     const destPath = path.join(workflowsDest, file);
     let content = fs.readFileSync(srcPath, 'utf8');
 
-    if (!content.includes('title:')) {
-        const title = file.replace('.md', '');
-        if (content.startsWith('---')) {
-            content = content.replace('---', `---\ntitle: ${title}`);
-        } else {
-            content = `---\ntitle: ${title}\n---\n\n` + content;
+    if (content.startsWith('---')) {
+        const frontMatterEnd = content.indexOf('---', 3);
+        if (frontMatterEnd !== -1) {
+            const frontMatter = content.slice(3, frontMatterEnd);
+            if (!frontMatter.includes('title:')) {
+                const title = file.replace('.md', '');
+                const newFrontMatter = `title: ${title}\n` + frontMatter;
+                content = `---${newFrontMatter}---` + content.slice(frontMatterEnd + 3);
+            }
         }
+    } else {
+        const title = file.replace('.md', '');
+        content = `---\ntitle: ${title}\n---\n\n` + content;
     }
     fs.writeFileSync(destPath, content);
 });

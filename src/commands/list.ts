@@ -18,7 +18,12 @@ export function listCommand(type: 'skills' | 'workflows') {
     // But per requirements, `agc init` creates .ag-cel.
 
     // Let's list from .ag-cel/<type>
-    const targetDir = path.join(agCelDir, type);
+    let targetDir = path.join(agCelDir, type);
+
+    // FIX: Workflows are stored in .agent/workflows, not .ag-cel/workflows
+    if (type === 'workflows') {
+        targetDir = path.join(process.cwd(), '.agent', 'workflows');
+    }
 
     if (!fs.existsSync(targetDir)) {
         console.log(chalk.yellow(`No ${type} directory found in .ag-cel.`));
