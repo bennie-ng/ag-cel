@@ -25,16 +25,18 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Core Concepts',
-					items: [
-						{ label: 'Skills', slug: 'concepts/skills' },
-						{ label: 'Rules', slug: 'concepts/rules' },
-					],
+					label: 'Workflows',
+					autogenerate: { directory: 'workflows' },
+				},
+				{
+					label: 'Skills',
+					autogenerate: { directory: 'skills' },
 				},
 				{
 					label: 'References',
 					items: [
 						{ label: 'CLI Commands', slug: 'reference/cli' },
+						{ label: 'Rule System', slug: 'concepts/rules' },
 					],
 				},
 			],

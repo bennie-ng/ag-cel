@@ -10,24 +10,60 @@ hero:
     - text: Get Started
       link: /ag-cel/intro/
       icon: right-arrow
-      variant: primary
     - text: View on GitHub
       link: https://github.com/bennie-ng/ag-cel
       icon: external
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-## Features
+## The AI Toolkit for Antigravity
 
-<CardGrid stagger>
-	<Card title="MCP Skills Server" icon="rocket">
-		Host skills locally for low-latency, secure AI agent interactions.
-	</Card>
-	<Card title="Ag-Cel CLI" icon="laptop">
-		Manage your server and skills directly from the terminal.
-	</Card>
-	<Card title="Antigravity Integration" icon="puzzle">
-		Seamlessly works with Antigravity IDE and workflows.
-	</Card>
+Ag-Cel transforms your local environment into a powerhouse for AI agents. It bridges the gap between local tools and AI capabilities with structured Skills and Workflows.
+
+<CardGrid>
+  <Card title="Workflows" icon="rocket">
+    Standardized procedures for common tasks like `/feature`, `/fix`, and `/deploy`.
+  </Card>
+  <Card title="Skills" icon="puzzle">
+    Specialized capabilities for Languages, Frameworks, Security, and detailed Methodologies.
+  </Card>
+  <Card title="Rules" icon="setting">
+    Guardrails and operational rules to ensure AI safety and consistency.
+  </Card>
+  <Card title="CLI" icon="terminal">
+    Simple command-line interface to manage your local MCP server.
+  </Card>
+</CardGrid>
+
+---
+
+## Quick Start
+
+```bash
+# Install globally
+npm install -g ag-cel
+
+# Initialize in your project
+agc init
+
+# Start the server
+agc start
+```
+
+---
+
+## Explore the Toolkit
+
+<CardGrid>
+  <LinkCard
+    title="Workflows"
+    description="See all available workflows"
+    href="/ag-cel/workflows/feature"
+  />
+  <LinkCard
+    title="Skills"
+    description="Browse the skill catalog"
+    href="/ag-cel/skills/python"
+  />
 </CardGrid>

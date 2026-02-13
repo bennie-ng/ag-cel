@@ -36,11 +36,21 @@ The `agc` command-line tool is your primary interface. Application data is store
 
 ### Skills
 
-**Skills** are specific, actionable capabilities that allow the AI to perform specialized tasks. Skills are stored as `.md` files in the `skills` directory.
+**Skills** are specialized capabilities that allow the AI to perform complex tasks. Ag-Cel comes with a rich set of built-in skills:
 
--   **Analytical**: Data analysis, debugging.
--   **Content Generation**: Writing, formatting.
--   **Operational**: API usage, code execution.
+-   **Languages**: Python, TypeScript, JavaScript
+-   **Frameworks**: React, Next.js, FastAPI, Django
+-   **DevOps**: Docker, GitHub Actions, Vercel
+-   **Security**: OWASP, Vulnerability Scanning
+-   **Methodology**: TDD, Systematic Debugging, Code Review, Architecture
+
+### Workflows
+
+**Workflows** are standard operating procedures for common development tasks.
+
+-   **Development**: `/feature`, `/fix`, `/test`, `/refactor`
+-   **Planning**: `/plan`, `/brainstorm`, `/research`
+-   **Operations**: `/ship`, `/deploy`, `/security-scan`
 
 ### Rules
 
