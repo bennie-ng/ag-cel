@@ -1,0 +1,25 @@
+# Source and Build
+src/
+site/
+tsconfig.json
+.tsconfig.tsbuildinfo
+
+# IDE and System
+.vscode/
+.idea/
+.DS_Store
+*.log
+
+# Git and Config
+.git/
+.github/
+.gitignore
+.npmignore
+
+# Dependencies
+node_modules/
+
+# Testing
+test/
+coverage/
+jest.config.js
