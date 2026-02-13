@@ -27,6 +27,7 @@ The `agc` command-line tool is your primary interface. Application data is store
 | `agc restart` | Restart the MCP server. |
 | `agc status` | Check the status of the local MCP server. |
 | `agc install` | Install AgCel globally and register the MCP server. |
+| `agc uninstall` | Uninstall AgCel globally and remove the MCP server configuration. |
 | `agc init` | Initialize AgCel in the current project (copies workflows to `.agent/workflows`). |
 | `agc skills list` | List all available skills. |
 | `agc workflows list` | List all available workflows. |
