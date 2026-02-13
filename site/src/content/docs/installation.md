@@ -10,15 +10,13 @@ description: How to install and set up AgCel
 
 ## Installing the CLI
 
-To install the AgCel CLI globally, run:
-
-
+To install the AgCel CLI globally and set up the local MCP server, run:
 
 ```bash
-npm install -g agcel
+npx agcel install
 ```
 
-This will make the `agc` command available in your terminal.
+This command copies the necessary files to `~/.agcel` and registers the AgCel MCP server in your `mcp_config.json`.
 
 ## Initialization
 
@@ -28,10 +26,7 @@ To start using AgCel in a project, initialize it by running:
 agc init
 ```
 
-This command acts as a setup wizard:
-1.  Creates a `.agc` directory in your project root or home directory.
-2.  Sets up default configuration files.
-3.  Prepares the local environment for the MCP server.
+This command copies workflows from the global installation (`~/.agcel/workflows`) to your project's `.agent/workflows` directory.
 
 ## Next Steps
 

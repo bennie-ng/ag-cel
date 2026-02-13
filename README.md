@@ -10,10 +10,10 @@ The project consists of two main components:
 
 ## Installation
 
-To install the AgCel CLI globally:
+To install the AgCel CLI globally and set up the local MCP server:
 
 ```bash
-npm install -g agcel
+npx agcel install
 ```
 
 ## CLI Usage
@@ -26,7 +26,8 @@ The `agc` command-line tool is your primary interface. Application data is store
 | `agc stop` | Stop the running MCP server. |
 | `agc restart` | Restart the MCP server. |
 | `agc status` | Check the status of the local MCP server. |
-| `agc init` | Initialize AgCel in the current project (creates `.agc` directory). |
+| `agc install` | Install AgCel globally and register the MCP server. |
+| `agc init` | Initialize AgCel in the current project (copies workflows to `.agent/workflows`). |
 | `agc skills list` | List all available skills. |
 | `agc workflows list` | List all available workflows. |
 | `agc --help` | Show the help menu. |

@@ -2,6 +2,7 @@
 import { Command } from 'commander';
 import chalk from 'chalk';
 import { initCommand } from './commands/init.js';
+import { installCommand } from './commands/install.js';
 import { startCommand } from './commands/start.js';
 import { stopCommand } from './commands/stop.js';
 import { restartCommand } from './commands/restart.js';
@@ -19,6 +20,11 @@ program
     .command('init')
     .description('Initialize AgCel in the current directory')
     .action(initCommand);
+
+program
+    .command('install')
+    .description('Install AgCel globally')
+    .action(installCommand);
 
 program
     .command('start')

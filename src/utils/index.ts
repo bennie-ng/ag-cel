@@ -14,6 +14,10 @@ export function getAgCelDir(): string {
     return path.join(process.cwd(), AG_CEL_DIR);
 }
 
+export function getGlobalAgCelDir(): string {
+    return path.join(os.homedir(), '.agcel');
+}
+
 export function isInitialized(): boolean {
     return fs.existsSync(getAgCelDir());
 }
