@@ -15,14 +15,12 @@ export async function initCommand() {
             fs.mkdirSync(agCelDir);
             // Create subdirectories
             fs.mkdirSync(path.join(agCelDir, 'skills'));
-            fs.mkdirSync(path.join(agCelDir, 'personas'));
             fs.mkdirSync(path.join(agCelDir, 'workflows'));
 
             // Create default config
             const config = {
                 port: 3000,
                 skillsDir: './skills',
-                personasDir: './personas',
                 workflowsDir: './workflows'
             };
             fs.writeFileSync(path.join(agCelDir, 'config.json'), JSON.stringify(config, null, 2));
@@ -127,7 +125,7 @@ export async function initCommand() {
         }
 
         console.log(chalk.green(`Successfully initialized Ag-Cel in ${AG_CEL_DIR}`));
-        console.log(chalk.cyan('You can now add skills, personas, and workflows to the .ag-cel directory.'));
+        console.log(chalk.cyan('You can now add skills and workflows to the .ag-cel directory.'));
         console.log(chalk.white('Run "agc start" to start the local MCP server.'));
     } catch (error) {
         console.error(chalk.red('Failed to initialize Ag-Cel:'), error);

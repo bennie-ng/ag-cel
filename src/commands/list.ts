@@ -3,7 +3,7 @@ import path from 'path';
 import chalk from 'chalk';
 import { getAgCelDir, isInitialized } from '../utils/index.js';
 
-export function listCommand(type: 'skills' | 'personas' | 'workflows') {
+export function listCommand(type: 'skills' | 'workflows') {
     if (!isInitialized()) {
         console.error(chalk.red('Ag-Cel is not initialized. Run "agc init" first.'));
         return;

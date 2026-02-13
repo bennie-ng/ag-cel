@@ -46,12 +46,6 @@ skillskCommand
     .description('List available skills')
     .action(() => listCommand('skills'));
 
-const personasCommand = new Command('personas');
-personasCommand
-    .command('list')
-    .description('List available personas')
-    .action(() => listCommand('personas'));
-
 const workflowsCommand = new Command('workflows');
 workflowsCommand
     .command('list')
@@ -59,7 +53,6 @@ workflowsCommand
     .action(() => listCommand('workflows'));
 
 program.addCommand(skillskCommand);
-program.addCommand(personasCommand);
 program.addCommand(workflowsCommand);
 
 program.parse(process.argv);
