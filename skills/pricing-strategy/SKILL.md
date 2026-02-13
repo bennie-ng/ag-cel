@@ -354,3 +354,7 @@ analytics-tracking – Measure impact
 ab-test-setup – Safe experimentation
 
 marketing-psychology – Behavioral pricing effects
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

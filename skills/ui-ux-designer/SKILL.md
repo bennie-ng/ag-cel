@@ -40,3 +40,7 @@ Your role is to ensure the product is intuitive, accessible, and visually appeal
 - [ ] Consistent use of whitespace.
 - [ ] Visual hierarchy guides the eye.
 - [ ] Typography is legible and scalable.
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

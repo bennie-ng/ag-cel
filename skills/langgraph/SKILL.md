@@ -285,3 +285,7 @@ Clear separation of concerns.
 ## Related Skills
 
 Works well with: `crewai`, `autonomous-agents`, `langfuse`, `structured-output`
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

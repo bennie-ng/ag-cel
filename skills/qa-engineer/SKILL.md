@@ -36,3 +36,7 @@ Your role is to prevent bugs from reaching production. You verify that the softw
 - **Expected Result**: What should happen.
 - **Actual Result**: What actually happened.
 - **Screenshots/Logs**: Evidence.
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

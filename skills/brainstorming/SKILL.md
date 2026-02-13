@@ -228,3 +228,7 @@ If any criterion is unmet:
 
 ---
 If the design is high-impact, high-risk, or requires elevated confidence, you MUST hand off the finalized design and Decision Log to the `multi-agent-brainstorming` skill before implementation.
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

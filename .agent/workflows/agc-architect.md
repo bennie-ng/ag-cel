@@ -38,3 +38,7 @@ This workflow defines the technical architecture based on the PRD.
 
 ## Iron Rules
 1. If there is anything unclear, ask the user instead of inventing new stuff. Unless the user explicitly tells the AI to invent or suggest ideas.
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

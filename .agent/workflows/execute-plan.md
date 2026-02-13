@@ -219,3 +219,7 @@ Before using this command:
 - `/plan --detailed` - Create detailed plan
 - `/brainstorm` - Design before planning
 - `/ship` - Create PR after execution
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

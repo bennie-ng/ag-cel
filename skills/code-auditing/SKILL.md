@@ -49,3 +49,7 @@ Before reporting findings:
 - [ ] Verified authentication and authorization logic
 - [ ] Checked for hardcoded secrets
 - [ ] Validated input sanitization
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

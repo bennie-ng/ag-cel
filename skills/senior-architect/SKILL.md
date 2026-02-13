@@ -207,3 +207,7 @@ Check the comprehensive troubleshooting section in `references/tech_decision_gui
 - Workflow Guide: `references/system_design_workflows.md`
 - Technical Guide: `references/tech_decision_guide.md`
 - Tool Scripts: `scripts/` directory
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

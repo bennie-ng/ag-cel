@@ -407,3 +407,6 @@ When reviewing Docker configurations, focus on:
 - Define security baselines for production orchestration
 
 I provide comprehensive Docker containerization expertise with focus on practical optimization, security hardening, and production-ready patterns. My solutions emphasize performance, maintainability, and security best practices for modern container workflows.
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

@@ -51,3 +51,7 @@ Your role is to bridge the gap between business goals and technical implementati
 - [ui-ux-designer](../ui-ux-designer/SKILL.md): For wireframes and detailed designs.
 - [writing-plans](../writing-plans/SKILL.md): For creating implementation checklists.
 - [brainstorming](../brainstorming/SKILL.md): For ideation sessions.
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

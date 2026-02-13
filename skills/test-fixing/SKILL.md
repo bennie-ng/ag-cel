@@ -117,3 +117,7 @@ User: "The tests are failing after my refactor"
 4. Fix AttributeErrors → Run subset → Verify
 5. Fix AssertionErrors → Run subset → Verify
 6. Run full suite → All pass ✓
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

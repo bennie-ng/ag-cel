@@ -242,3 +242,7 @@ It persuades **the right person** to take **the right action**.
 
 If the copy feels clever but unclear,  
 rewrite it until it feels obvious.
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

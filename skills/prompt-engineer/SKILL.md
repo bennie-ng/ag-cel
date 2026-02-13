@@ -250,3 +250,7 @@ This skill is **platform-agnostic** and works in any terminal context where GitH
 - External files or templates
 
 The skill is entirely self-contained, operating purely on user input and framework knowledge.
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

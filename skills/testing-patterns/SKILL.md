@@ -257,3 +257,7 @@ npm test ComponentName.test.tsx
 
 - **react-ui-patterns**: Test all UI states (loading, error, empty, success)
 - **systematic-debugging**: Write test that reproduces bug before fixing
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

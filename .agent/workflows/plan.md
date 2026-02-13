@@ -331,3 +331,7 @@ Modify behavior via CLAUDE.md:
 - Required plan sections
 - Estimation approach
 - Risk assessment criteria
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

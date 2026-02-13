@@ -485,3 +485,7 @@ Use these skills **only after the audit is complete** and findings are accepted.
 * **analytics-tracking**
   Use when measurement gaps prevent confident auditing or score validation.
 
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

@@ -215,3 +215,7 @@ Modify behavior via CLAUDE.md:
 - Commit message format
 - PR template requirements
 - Auto-merge settings
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

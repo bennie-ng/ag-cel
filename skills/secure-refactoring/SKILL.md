@@ -48,3 +48,7 @@ Before finalizing changes:
 - [ ] Escaped output based on context (HTML, JS, CSS)
 - [ ] Replaced weak cryptographic algorithms with strong ones
 - [ ] Verified that refactoring did not break existing functionality
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

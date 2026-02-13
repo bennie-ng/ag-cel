@@ -67,3 +67,7 @@ ALTER TABLE users ADD CONSTRAINT unique_email UNIQUE (email);
 - **N+1 queries**: Use JOINs or batch loading
 - **Missing indexes**: Add indexes for WHERE/ORDER BY
 - **Large transactions**: Keep transactions short
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

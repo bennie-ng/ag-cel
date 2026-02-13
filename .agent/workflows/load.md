@@ -106,3 +106,7 @@ Suggest next actions:
 - "Ready to work on [component]. What would you like to do?"
 - "I see [patterns/issues]. Want me to address them?"
 - "Related files that might be relevant: [list]"
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

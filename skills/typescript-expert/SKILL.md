@@ -196,3 +196,7 @@ Slow language server? → Exclude node_modules, limit files in tsconfig
 - [tsd](https://github.com/tsdjs/tsd) - Standalone type testing
 
 Always validate changes don't break existing functionality before considering the issue resolved.
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.

@@ -321,3 +321,7 @@ Blocking DNS lookups or connections worsen cold starts.
 | Issue | medium | ## Tell Lambda not to wait for event loop |
 | Issue | medium | ## For large file uploads |
 | Issue | high | ## Use different buckets/prefixes |
+
+
+## Gap Analysis Rule
+Always identify gaps and suggest next steps to users. In case there is no gaps anymore, then AI should clearly state that there is no gap left.
