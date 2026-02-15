@@ -1,7 +1,3 @@
----
-description: Deploy the application.
----
-
 # /deploy - Deployment Command
 
 ## Purpose

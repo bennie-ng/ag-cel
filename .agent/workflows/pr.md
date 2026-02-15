@@ -1,7 +1,3 @@
----
-description: Prepare and manage pull requests.
----
-
 # /pr - Create Pull Request
 
 ## Purpose

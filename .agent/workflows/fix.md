@@ -1,7 +1,3 @@
----
-description: Fix code issues or bugs.
----
-
 # /fix - Bug Fix Workflow
 
 ## Purpose

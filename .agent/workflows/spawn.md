@@ -1,7 +1,3 @@
----
-description: Launch background tasks for parallel execution.
----
-
 # /spawn
 
 ## Purpose

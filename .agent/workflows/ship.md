@@ -1,7 +1,3 @@
----
-description: Prepare for release and deployment.
----
-
 # /ship - Ship Code Command
 
 ## Purpose

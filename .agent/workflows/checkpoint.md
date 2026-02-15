@@ -1,7 +1,3 @@
----
-description: Create a checkpoint of the current state.
----
-
 # /checkpoint
 
 ## Purpose

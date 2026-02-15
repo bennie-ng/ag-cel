@@ -1,7 +1,3 @@
----
-description: Research a topic or technology.
----
-
 # /research - Research Command
 
 ## Purpose

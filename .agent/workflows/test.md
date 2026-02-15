@@ -1,7 +1,3 @@
----
-description: Run and manage tests.
----
-
 # /test - Test Generation Command
 
 ## Purpose

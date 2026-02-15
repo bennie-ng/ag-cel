@@ -1,7 +1,3 @@
----
-description: Commit changes to version control.
----
-
 # /commit - Smart Commit Command
 
 ## Purpose

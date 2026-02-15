@@ -1,7 +1,3 @@
----
-description: Generate API documentation or code.
----
-
 # /api-gen - API Generation Command
 
 ## Purpose

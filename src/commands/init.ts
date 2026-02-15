@@ -63,23 +63,44 @@ export async function initCommand() {
         console.log(chalk.blue('Copying workflows...'));
         const workflows = fs.readdirSync(globalWorkflowsDir);
 
+        let overwriteAll = false;
+
         for (const workflow of workflows) {
             const srcPath = path.join(globalWorkflowsDir, workflow);
             const destPath = path.join(projectWorkflowsDir, workflow);
 
             if (fs.lstatSync(srcPath).isFile()) {
-                let content = fs.readFileSync(srcPath, 'utf-8');
+                const content = fs.readFileSync(srcPath, 'utf-8');
 
                 if (fs.existsSync(destPath)) {
                     const destContent = fs.readFileSync(destPath, 'utf-8');
                     if (content !== destContent) {
-                        const answer = await inquirer.prompt([{
-                            type: 'confirm',
-                            name: 'overwrite',
-                            message: `Workflow ${workflow} already exists and is different. Overwrite?`,
-                            default: false
-                        }]);
-                        if (answer.overwrite) {
+                        let action = 'skip';
+
+                        if (overwriteAll) {
+                            action = 'overwrite';
+                        } else {
+                            const answer = await inquirer.prompt([{
+                                type: 'expand',
+                                name: 'action',
+                                message: `Workflow ${workflow} already exists and is different.`,
+                                choices: [
+                                    { key: 'y', name: 'Overwrite', value: 'overwrite' },
+                                    { key: 'n', name: 'Skip', value: 'skip' },
+                                    { key: 'a', name: 'Overwrite All', value: 'all' }
+                                ],
+                                default: 1
+                            }]);
+
+                            if (answer.action === 'all') {
+                                overwriteAll = true;
+                                action = 'overwrite';
+                            } else {
+                                action = answer.action;
+                            }
+                        }
+
+                        if (action === 'overwrite') {
                             fs.writeFileSync(destPath, content);
                             console.log(chalk.green(`Updated ${workflow}`));
                         } else {

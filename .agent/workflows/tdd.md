@@ -1,7 +1,3 @@
----
-description: Test-Driven Development workflow.
----
-
 # /tdd - Test-Driven Development Workflow
 
 ## Purpose

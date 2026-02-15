@@ -1,7 +1,3 @@
----
-description: Interactive debugging session to fix issues.
----
-
 # /debug - Debug Command
 
 ## Purpose

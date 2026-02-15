@@ -1,7 +1,3 @@
----
-description: Update and manage the changelog.
----
-
 # /changelog - Changelog Command
 
 ## Purpose
