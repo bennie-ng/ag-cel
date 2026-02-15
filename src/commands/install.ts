@@ -81,7 +81,6 @@ export async function installCommand() {
         mcpConfig.mcpServers['agcel'] = {
             command: 'node',
             args: [serverPath],
-            cwd: globalDir,
             env: {
                 // Ensure the server knows where to find everything
                 NODE_ENV: 'production'

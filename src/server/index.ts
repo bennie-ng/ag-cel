@@ -11,7 +11,7 @@ import fs from 'fs';
 import path from 'path';
 import express from 'express';
 import cors from 'cors';
-import { getAgCelDir } from '../utils/index.js';
+import { getAgCelDir, getGlobalAgCelDir } from '../utils/index.js';
 
 // Argument parsing for transport mode
 const args = process.argv.slice(2);
@@ -32,10 +32,29 @@ const server = new Server(
 );
 
 // Helper to load skills
-function getSkills() {
+// Helper to determine the skills directory
+function getSkillsDir(): string | null {
     const agCelDir = getAgCelDir();
-    const skillsDir = path.join(agCelDir, 'skills');
-    if (!fs.existsSync(skillsDir)) return [];
+    let skillsDir = path.join(agCelDir, 'skills');
+
+    // Fallback for global install where skills are in project root (e.g. ~/.agcel/skills)
+    if (!fs.existsSync(skillsDir)) {
+        skillsDir = path.join(process.cwd(), 'skills');
+    }
+
+    // Double fallback to global installation directory
+    if (!fs.existsSync(skillsDir)) {
+        skillsDir = path.join(getGlobalAgCelDir(), 'skills');
+    }
+
+    if (!fs.existsSync(skillsDir)) return null;
+    return skillsDir;
+}
+
+// Helper to load skills
+function getSkills() {
+    const skillsDir = getSkillsDir();
+    if (!skillsDir) return [];
 
     return fs.readdirSync(skillsDir).filter(skill => {
         return fs.statSync(path.join(skillsDir, skill)).isDirectory() && fs.existsSync(path.join(skillsDir, skill, 'SKILL.md'));
@@ -72,9 +91,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     const { name, arguments: args } = request.params;
     const skills = getSkills();
 
-    if (skills.includes(name)) {
-        const agCelDir = getAgCelDir();
-        const skillPath = path.join(agCelDir, 'skills', name, 'SKILL.md');
+    const skillsDir = getSkillsDir();
+
+    if (skillsDir && skills.includes(name)) {
+        const skillPath = path.join(skillsDir, name, 'SKILL.md');
 
         if (fs.existsSync(skillPath)) {
             const content = fs.readFileSync(skillPath, 'utf-8');
@@ -115,13 +135,16 @@ server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
 
     if (match) {
         const skill = match[1];
-        const agCelDir = getAgCelDir();
-        const skillPath = path.join(agCelDir, 'skills', skill, 'SKILL.md');
-        if (fs.existsSync(skillPath)) {
-            const content = fs.readFileSync(skillPath, 'utf-8');
-            return {
-                contents: [{ uri, mimeType: "text/markdown", text: content }]
-            };
+        const skillsDir = getSkillsDir();
+
+        if (skillsDir) {
+            const skillPath = path.join(skillsDir, skill, 'SKILL.md');
+            if (fs.existsSync(skillPath)) {
+                const content = fs.readFileSync(skillPath, 'utf-8');
+                return {
+                    contents: [{ uri, mimeType: "text/markdown", text: content }]
+                };
+            }
         }
     }
 

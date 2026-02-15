@@ -23,9 +23,30 @@ export async function initCommand() {
         return;
     }
 
-    // 2. Setup local .agent/workflows
+    // 2. Setup local .agc and .agent directories
+    const projectAgcDir = path.join(process.cwd(), '.agc');
+    const projectSkillsDir = path.join(projectAgcDir, 'skills');
     const projectAgentDir = path.join(process.cwd(), '.agent');
     const projectWorkflowsDir = path.join(projectAgentDir, 'workflows');
+
+    // Create .agc directory (Critical for isInitialized check)
+    if (!fs.existsSync(projectAgcDir)) {
+        console.log(chalk.blue('Creating .agc directory...'));
+        fs.mkdirSync(projectAgcDir, { recursive: true });
+    }
+
+    // Copy skills from global install to .agc/skills
+    const globalSkillsDir = path.join(globalDir, 'skills');
+    if (fs.existsSync(globalSkillsDir)) {
+        if (!fs.existsSync(projectSkillsDir)) {
+            console.log(chalk.blue('Creating .agc/skills directory...'));
+            fs.mkdirSync(projectSkillsDir, { recursive: true });
+        }
+        console.log(chalk.blue('Copying skills...'));
+        fs.cpSync(globalSkillsDir, projectSkillsDir, { recursive: true });
+    } else {
+        console.warn(chalk.yellow(`Warning: Global skills not found at ${globalSkillsDir}`));
+    }
 
     try {
         if (!fs.existsSync(projectAgentDir)) {
@@ -47,18 +68,9 @@ export async function initCommand() {
             const destPath = path.join(projectWorkflowsDir, workflow);
 
             if (fs.lstatSync(srcPath).isFile()) {
-                // Read content to check/update skill references if needed
                 let content = fs.readFileSync(srcPath, 'utf-8');
 
-                // For now, we assume workflows are already correct in the global install.
-                // If we need to dynamically update them, we would do it here.
-                // The requirement "Verify workflows use AgCel skills" implies checking or updating.
-                // Since this is a copy operation, we are copying what is in global.
-                // The global install copies from the package.
-                // So the source of truth is the package's workflows.
-
                 if (fs.existsSync(destPath)) {
-                    // Check if distinct
                     const destContent = fs.readFileSync(destPath, 'utf-8');
                     if (content !== destContent) {
                         const answer = await inquirer.prompt([{
@@ -82,13 +94,14 @@ export async function initCommand() {
         }
 
         console.log(chalk.green('AgCel project initialization complete!'));
-        console.log(chalk.cyan('Workflows have been installed to .agent/workflows.'));
+        console.log(chalk.cyan('Workflows installed to .agent/workflows'));
+        console.log(chalk.cyan('Skills installed to .agc/skills'));
 
         // 4. Update .gitignore
         updateGitIgnore(process.cwd());
 
     } catch (error) {
-        console.error(chalk.red('Failed to initialize project:'), error);
+        throw error; // Re-throw to be caught by outer catch
     }
 }
 
