@@ -13,7 +13,7 @@ export default defineConfig({
 				{
 					label: 'GitHub',
 					icon: 'github',
-					href: 'https://github.com/bennie-ng/ag-cel',
+					href: 'https://github.com/bennie-ng/AgCel',
 				},
 			],
 			sidebar: [

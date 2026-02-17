@@ -26,7 +26,7 @@ To start using AgCel in a project, initialize it by running:
 agc init
 ```
 
-This command copies workflows from the global installation (`~/.agcel/workflows`) to your project's `.agent/workflows` directory.
+This command copies workflows from the global installation (`~/.agcel/workflows`) to your project's `.agent/workflows` directory, and skills to `.agc/skills`.
 
 ## Next Steps
 

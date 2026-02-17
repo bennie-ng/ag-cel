@@ -18,7 +18,7 @@ npx agcel install
 
 ## CLI Usage
 
-The `agc` command-line tool is your primary interface. Application data is stored in the `.ag-cel` directory in user's home or project root.
+The `agc` command-line tool is your primary interface. Application data is stored in the `.agc` directory in your project root, and `~/.agcel` for global configuration.
 
 | Command | Description |
 | :--- | :--- |

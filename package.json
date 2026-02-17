@@ -1,6 +1,6 @@
 {
     "name": "agcel",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Antigravity Context Engineering Library is a local MCP (Model Context Protocol) Server containing multiple skills, rules and workflows for end to end software development",
     "main": "dist/index.js",
     "bin": {
