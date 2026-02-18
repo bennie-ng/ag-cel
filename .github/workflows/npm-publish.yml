@@ -19,14 +19,16 @@ jobs:
       
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '23.x'
           registry-url: 'https://registry.npmjs.org'
           
       - name: Install dependencies
         run: npm ci
         
       - name: Build
-        run: npm run build
+        run: |
+          npm install  
+          npm run build
         
       - name: Check version matches
         run: |
@@ -42,4 +44,6 @@ jobs:
           fi
           
       - name: Publish to NPM
-        run: npm publish
+        run: |
+          npm version patch
+          npm publish
