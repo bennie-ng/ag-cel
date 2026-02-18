@@ -30,10 +30,6 @@ The `agc` command-line tool is your primary interface. Application data is store
 
 | Command | Description |
 | :--- | :--- |
-| `agc start` | Start the MCP server locally (using project or global config). |
-| `agc stop` | Stop the running MCP server. |
-| `agc restart` | Restart the MCP server. |
-| `agc status` | Check the status of the local MCP server. |
 | `agc init` | Initialize AgCel in the current project (copies workflows to `.agent/workflows`). |
 | `agc skills list` | List all available skills (local or global). |
 | `agc workflows list` | List all available workflows (local or global). |

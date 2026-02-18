@@ -28,16 +28,12 @@ This command copies default workflows to your project's `.agent/workflows` direc
 
 ## Next Steps
 
-Once installed, you can start the server:
+Once installed, simply open your project in the Antigravity IDE. The IDE will automatically detect and start the AgCel MCP server for you.
+
+You can verify your skills and workflows using the discovery commands:
 
 ```bash
-agc start
-```
-
-Check the status:
-
-```bash
-agc status
+agc skills list
 ```
 
 To remove AgCel from your system and clean up configuration, run:

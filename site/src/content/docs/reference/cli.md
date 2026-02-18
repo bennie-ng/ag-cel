@@ -5,31 +5,7 @@ description: AgCel CLI Command Reference
 
 The `agc` command-line tool provides the following commands:
 
-## Server Management
 
-### `agc start`
-Starts the MCP server locally.
-```bash
-agc start
-```
-
-### `agc stop`
-Stops the running MCP server.
-```bash
-agc stop
-```
-
-### `agc restart`
-Restarts the MCP server.
-```bash
-agc restart
-```
-
-### `agc status`
-Checks the status of the local MCP server.
-```bash
-agc status
-```
 
 ## Project Management
 

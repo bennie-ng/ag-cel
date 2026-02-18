@@ -5,10 +5,6 @@ import fs from 'fs';
 import path from 'path';
 import { initCommand } from './commands/init.js';
 import { uninstallCommand } from './commands/uninstall.js';
-import { startCommand } from './commands/start.js';
-import { stopCommand } from './commands/stop.js';
-import { restartCommand } from './commands/restart.js';
-import { statusCommand } from './commands/status.js';
 import { listCommand } from './commands/list.js';
 
 const pkg = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..', 'package.json'), 'utf-8'));
@@ -29,26 +25,6 @@ program
     .command('uninstall')
     .description('Clean up AgCel configuration and data')
     .action(uninstallCommand);
-
-program
-    .command('start')
-    .description('Start the MCP server locally')
-    .action(startCommand);
-
-program
-    .command('stop')
-    .description('Stop the MCP server locally')
-    .action(stopCommand);
-
-program
-    .command('restart')
-    .description('Restart the MCP server locally')
-    .action(restartCommand);
-
-program
-    .command('status')
-    .description('Check the status of the MCP server')
-    .action(statusCommand);
 
 const skillsCommand = new Command('skills');
 skillsCommand
