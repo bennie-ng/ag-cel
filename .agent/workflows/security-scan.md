@@ -1,3 +1,7 @@
+---
+description: Security Scanning
+---
+
 # /security-scan - Security Scanning Command
 
 ## Purpose

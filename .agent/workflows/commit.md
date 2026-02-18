@@ -1,3 +1,7 @@
+---
+description: Smart Commit with Auto-generated Message
+---
+
 # /commit - Smart Commit Command
 
 ## Purpose

@@ -1,3 +1,7 @@
+---
+description: Debug and Fix Errors
+---
+
 # /debug - Debug Command
 
 ## Purpose

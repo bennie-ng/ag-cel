@@ -1,3 +1,7 @@
+---
+description: Feature Development
+---
+
 # /feature - Feature Development Workflow
 
 ## Purpose

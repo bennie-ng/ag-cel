@@ -1,3 +1,7 @@
+---
+description: Create a Checkpoint
+---
+
 # /checkpoint
 
 ## Purpose

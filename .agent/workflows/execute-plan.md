@@ -1,3 +1,7 @@
+---
+description: Subagent-Driven Plan Execution
+---
+
 # /execute-plan - Subagent-Driven Plan Execution
 
 ## Purpose

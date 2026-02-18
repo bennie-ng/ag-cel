@@ -1,3 +1,7 @@
+---
+description: Create Pull Request
+---
+
 # /pr - Create Pull Request
 
 ## Purpose

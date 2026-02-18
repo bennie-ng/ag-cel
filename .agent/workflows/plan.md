@@ -1,3 +1,7 @@
+---
+description: Task Planning
+---
+
 # /plan - Task Planning Command
 
 ## Purpose

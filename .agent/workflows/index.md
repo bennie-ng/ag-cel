@@ -1,3 +1,7 @@
+---
+description: Workflow Index
+---
+
 # /index
 
 ## Purpose

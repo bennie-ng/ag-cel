@@ -1,3 +1,7 @@
+---
+description: Documentation Generation
+---
+
 # /doc - Documentation Command
 
 ## Purpose

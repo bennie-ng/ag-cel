@@ -1,3 +1,7 @@
+---
+description: Switch Mode
+---
+
 # /mode
 
 ## Purpose

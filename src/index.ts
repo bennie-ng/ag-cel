@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
 import chalk from 'chalk';
+import fs from 'fs';
+import path from 'path';
 import { initCommand } from './commands/init.js';
 import { installCommand } from './commands/install.js';
 import { uninstallCommand } from './commands/uninstall.js';
@@ -10,12 +12,14 @@ import { restartCommand } from './commands/restart.js';
 import { statusCommand } from './commands/status.js';
 import { listCommand } from './commands/list.js';
 
+const pkg = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..', 'package.json'), 'utf-8'));
+
 const program = new Command();
 
 program
     .name('agc')
     .description('AgCel MCP Skills Server CLI')
-    .version('1.0.0');
+    .version(pkg.version);
 
 program
     .command('init')
@@ -52,8 +56,8 @@ program
     .description('Check the status of the MCP server')
     .action(statusCommand);
 
-const skillskCommand = new Command('skills');
-skillskCommand
+const skillsCommand = new Command('skills');
+skillsCommand
     .command('list')
     .description('List available skills')
     .action(() => listCommand('skills'));
@@ -64,7 +68,7 @@ workflowsCommand
     .description('List available workflows')
     .action(() => listCommand('workflows'));
 
-program.addCommand(skillskCommand);
+program.addCommand(skillsCommand);
 program.addCommand(workflowsCommand);
 
 program.parse(process.argv);

@@ -1,3 +1,7 @@
+---
+description: API Generation
+---
+
 # /api-gen - API Generation Command
 
 ## Purpose

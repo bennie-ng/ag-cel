@@ -1,3 +1,7 @@
+---
+description: Test Generation
+---
+
 # /test - Test Generation Command
 
 ## Purpose

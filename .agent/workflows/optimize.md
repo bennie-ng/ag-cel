@@ -1,3 +1,7 @@
+---
+description: Performance Optimization
+---
+
 # /optimize - Performance Optimization Command
 
 ## Purpose

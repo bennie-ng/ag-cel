@@ -1,3 +1,7 @@
+---
+description: Changelog Generation
+---
+
 # /changelog - Changelog Command
 
 ## Purpose

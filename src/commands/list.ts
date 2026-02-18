@@ -32,7 +32,11 @@ export function listCommand(type: 'skills' | 'workflows') {
 
     try {
         const items = fs.readdirSync(targetDir).filter(item => {
-            return fs.statSync(path.join(targetDir, item)).isDirectory();
+            if (type === 'skills') {
+                return fs.statSync(path.join(targetDir, item)).isDirectory();
+            }
+            // Workflows are .md files
+            return item.endsWith('.md') && fs.statSync(path.join(targetDir, item)).isFile();
         });
 
         if (items.length === 0) {

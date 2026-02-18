@@ -1,3 +1,7 @@
+---
+description: Spawn Subagent
+---
+
 # /spawn
 
 ## Purpose

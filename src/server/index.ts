@@ -13,6 +13,8 @@ import express from 'express';
 import cors from 'cors';
 import { getAgCelDir, getGlobalAgCelDir } from '../utils/index.js';
 
+const pkg = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..', '..', 'package.json'), 'utf-8'));
+
 // Argument parsing for transport mode
 const args = process.argv.slice(2);
 const modeIndex = args.indexOf('--mode');
@@ -21,7 +23,7 @@ const mode = modeIndex !== -1 ? args[modeIndex + 1] : 'stdio'; // Default to std
 const server = new Server(
     {
         name: "AgCel",
-        version: "1.0.0",
+        version: pkg.version,
     },
     {
         capabilities: {

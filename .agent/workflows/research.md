@@ -1,3 +1,7 @@
+---
+description: Research and Analysis
+---
+
 # /research - Research Command
 
 ## Purpose

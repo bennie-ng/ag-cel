@@ -1,3 +1,7 @@
+---
+description: Ship Code
+---
+
 # /ship - Ship Code Command
 
 ## Purpose

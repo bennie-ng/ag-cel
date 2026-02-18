@@ -1,3 +1,7 @@
+---
+description: Bug Fix Workflow
+---
+
 # /fix - Bug Fix Workflow
 
 ## Purpose

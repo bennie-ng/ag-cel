@@ -1,3 +1,7 @@
+---
+description: Code Review
+---
+
 # /review - Code Review Command
 
 ## Purpose

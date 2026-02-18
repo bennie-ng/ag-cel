@@ -1,3 +1,7 @@
+---
+description: Code Refactoring
+---
+
 # /refactor - Refactoring Command
 
 ## Purpose

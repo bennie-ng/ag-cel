@@ -1,3 +1,7 @@
+---
+description: Project Status
+---
+
 # /status - Project Status Command
 
 ## Purpose

@@ -1,3 +1,7 @@
+---
+description: Help and Command Reference
+---
+
 # /help - Help Command
 
 ## Purpose
