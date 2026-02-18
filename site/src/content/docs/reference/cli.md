@@ -42,13 +42,13 @@ agc init
 ## Resource Listing
 
 ### `agc skills list`
-Lists all available skills in the current environment.
+Lists all available skills. It will show local skills first, and fall back to global skills if the project is not initialized.
 ```bash
 agc skills list
 ```
 
 ### `agc workflows list`
-Lists all available workflows.
+Lists all available workflows. It will show local workflows first, and fall back to global ones if the project is not initialized.
 ```bash
 agc workflows list
 ```
@@ -56,10 +56,12 @@ agc workflows list
 ## Maintenance
 
 ### `agc uninstall`
-Completely removes AgCel from your system, including global data and configuration.
+Cleans up global data, removes the server from the IDE configuration, and prompts to uninstall the npm package.
 ```bash
 agc uninstall
 ```
+
+
 
 ## General
 

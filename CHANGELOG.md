@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2026-02-18
+
+### Changed
+
+-   **Installation**: Transitioned to standard `npm install -g agcel` for global installation.
+-   **CLI**: Removed `agc install` and `agc uninstall` commands. CLI now manages requirements automatically via global/local discovery.
+-   **Discovery**: `agc start`, `agc status`, and listing commands now fall back to global installation if local project is not initialized.
+-   **DX**: Simplified `agc init` to focus on local project configuration.
+
 ## [1.0.2] - 2026-02-18
 
 ### Fixed

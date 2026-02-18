@@ -8,25 +8,23 @@ description: How to install and set up AgCel
 - Node.js (v18 or higher)
 - npm or yarn
 
-## Installing the CLI
-
-To install the AgCel CLI globally and set up the local MCP server, run:
+To install the AgCel CLI globally, run:
 
 ```bash
-npx agcel install
+npm install -g agcel
 ```
 
-This command copies the necessary files to `~/.agcel` and registers the AgCel MCP server in your `mcp_config.json`.
+This makes the `agc` command available globally. If you are developing AgCel locally, you can run `npm install -g .` from the project root.
 
-## Initialization
+Once installed, the CLI can run in a "Global Mode" even without a project-specific setup, using built-in skills and workflows.
 
-To start using AgCel in a project, initialize it by running:
+While AgCel works globally, you can initialize it in a specific project to customize its behavior:
 
 ```bash
 agc init
 ```
 
-This command copies workflows from the global installation (`~/.agcel/workflows`) to your project's `.agent/workflows` directory, and skills to `.agc/skills`.
+This command copies default workflows to your project's `.agent/workflows` directory and skills to `.agc/skills`. When running inside a project initialized this way, AgCel will prioritize these local resources.
 
 ## Next Steps
 
@@ -42,15 +40,13 @@ Check the status:
 agc status
 ```
 
-## Uninstallation
-
-If you need to completely remove AgCel from your system, you can use the built-in uninstall command:
+To remove AgCel from your system and clean up configuration, run:
 
 ```bash
 agc uninstall
 ```
 
 This command will:
-1. Remove AgCel from your `mcp_config.json`.
-2. Delete the global data directory at `~/.agcel`.
-3. Provide an option to run `npm uninstall -g agcel` to remove the CLI.
+1.  Remove AgCel from your `mcp_config.json`.
+2.  Optionally delete the global data directory at `~/.agcel`.
+3.  Prompt to run `npm uninstall -g agcel` for you.

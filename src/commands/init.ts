@@ -13,13 +13,13 @@ export async function initCommand() {
     // 1. Check if global install exists
     if (!fs.existsSync(globalDir)) {
         console.error(chalk.red('Error: AgCel is not installed globally.'));
-        console.error(chalk.yellow('Please run "npx agcel install" first to set up the global environment.'));
+        console.error(chalk.yellow('Please run "npm install -g agcel" first.'));
         return;
     }
 
     if (!fs.existsSync(globalWorkflowsDir)) {
         console.error(chalk.red(`Error: Workflows directory not found in global install at ${globalWorkflowsDir}`));
-        console.error(chalk.yellow('Please try running "npx agcel install" again to fix the installation.'));
+        console.error(chalk.yellow('Please try reinstalling: npm install -g agcel'));
         return;
     }
 
@@ -43,7 +43,11 @@ export async function initCommand() {
             fs.mkdirSync(projectSkillsDir, { recursive: true });
         }
         console.log(chalk.blue('Copying skills...'));
-        fs.cpSync(globalSkillsDir, projectSkillsDir, { recursive: true });
+        try {
+            fs.cpSync(globalSkillsDir, projectSkillsDir, { recursive: true });
+        } catch (e) {
+            console.error(chalk.red('Failed to copy skills.'), e);
+        }
     } else {
         console.warn(chalk.yellow(`Warning: Global skills not found at ${globalSkillsDir}`));
     }

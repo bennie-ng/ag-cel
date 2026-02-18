@@ -4,7 +4,6 @@ import chalk from 'chalk';
 import fs from 'fs';
 import path from 'path';
 import { initCommand } from './commands/init.js';
-import { installCommand } from './commands/install.js';
 import { uninstallCommand } from './commands/uninstall.js';
 import { startCommand } from './commands/start.js';
 import { stopCommand } from './commands/stop.js';
@@ -27,13 +26,8 @@ program
     .action(initCommand);
 
 program
-    .command('install')
-    .description('Install AgCel globally')
-    .action(installCommand);
-
-program
     .command('uninstall')
-    .description('Uninstall AgCel globally')
+    .description('Clean up AgCel configuration and data')
     .action(uninstallCommand);
 
 program

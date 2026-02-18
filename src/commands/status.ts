@@ -3,8 +3,7 @@ import { getPid, isRunning, isInitialized } from '../utils/index.js';
 
 export function statusCommand() {
     if (!isInitialized()) {
-        console.log(chalk.red('AgCel is not initialized. Run "agc init" first.'));
-        return;
+        console.log(chalk.yellow('AgCel is not initialized in this project. Using global configuration.'));
     }
 
     const pid = getPid();

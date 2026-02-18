@@ -5,9 +5,11 @@ import chalk from 'chalk';
 import { isInitialized, savePid, getPid, isRunning, getAgCelDir } from '../utils/index.js';
 
 export function startCommand() {
+    // We allow starting even if not initialized locally (will use global skills/workflows if we implement that logic in the server)
+    // For now, let's keep the isInitialized check if we want to enforce project-specific servers,
+    // OR just warn and continue.
     if (!isInitialized()) {
-        console.error(chalk.red('AgCel is not initialized. Run "agc init" first.'));
-        return;
+        console.log(chalk.yellow('AgCel is not initialized in this project. Starting with global configuration...'));
     }
 
     const existingPid = getPid();

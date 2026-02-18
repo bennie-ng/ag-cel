@@ -8,23 +8,21 @@ The project consists of two main components:
 1.  **AgCel CLI**: A command-line interface to manage and interact with the MCP server.
 2.  **AgCel MCP Skills Server**: A local server that hosts skills and capabilities, enabling AI agents to perform complex tasks.
 
-## Installation
-
-To install the AgCel CLI globally and set up the local MCP server:
+To install the AgCel CLI globally:
 
 ```bash
-npx agcel install
+npm install -g agcel
 ```
 
-## Uninstallation
+This will make the `agc` command available globally. If you are developing locally, you can run `npm install -g .` from the project root.
 
-To completely remove AgCel from your system:
+To remove AgCel, simply uninstall the npm package:
 
 ```bash
-agc uninstall
+npm uninstall -g agcel
 ```
 
-This will remove AgCel from your MCP config, delete the global data directory (`~/.agcel`), and prompt to uninstall the npm package.
+You may also want to manually remove the global data directory (`~/.agcel`) and the server registration in your MCP config if you previously ran the legacy `install` command.
 
 ## CLI Usage
 
@@ -32,14 +30,14 @@ The `agc` command-line tool is your primary interface. Application data is store
 
 | Command | Description |
 | :--- | :--- |
-| `agc start` | Start the MCP server locally. |
+| `agc start` | Start the MCP server locally (using project or global config). |
 | `agc stop` | Stop the running MCP server. |
 | `agc restart` | Restart the MCP server. |
 | `agc status` | Check the status of the local MCP server. |
 | `agc init` | Initialize AgCel in the current project (copies workflows to `.agent/workflows`). |
-| `agc skills list` | List all available skills. |
-| `agc workflows list` | List all available workflows. |
-| `agc uninstall` | Completely remove AgCel from your system. |
+| `agc skills list` | List all available skills (local or global). |
+| `agc workflows list` | List all available workflows (local or global). |
+| `agc uninstall` | Clean up global data and remove the npm package. |
 | `agc --help` | Show the help menu. |
 | `agc --version` | Show the CLI version. |
 
